@@ -1,22 +1,23 @@
-#include "lists.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "lists.h"
 
 /**
- * print_listint - Prints all the elements of a listint_t list.
- * @h: A pointer to the head of the list_t list.
- *
- * Return: The number of nodes in the list_t list.
+ * print_listint - prints all elements of a listint_t list.
+ * @h: a pointer to the list to iterato to.
+ * Return: the number of nodes
  */
 size_t print_listint(const listint_t *h)
 {
-	size_t nodes = 0;
+	const listint_t *tmp;
+	size_t i = 0;
 
-	while (h)
+	tmp = h;
+	while (tmp)
 	{
-		nodes++;
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%d\n", tmp->n);
+		i++;
+		tmp = tmp->next;
 	}
-
-	return (nodes);
+	return (i);
 }
